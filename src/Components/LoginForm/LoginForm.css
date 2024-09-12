@@ -2,43 +2,46 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+  margin: 0; /* Ensure there's no default margin */
+  padding: 0; /* Ensure there's no default padding */
 }
 
 .wrapper {
-  width: 420px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
+  width: 420px; /* Use percentage for fluid width */
+  max-width: 420px; /* Ensure a maximum width */
+  background: rgba(0, 0, 0, 0.2); /* Slightly visible background */
+  border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #fff;
   border-radius: 10px;
-  padding: 30px 40px;
+  padding: 2rem; /* Padding in rem for better scalability */
+  margin: 1rem auto; /* Center horizontally with auto margins */
   position: relative; /* Position relative for spinner positioning */
 }
 
 .wrapper h1 {
-  font-size: 36px;
+  font-size: 2rem; /* Font size in rem for scalability */
   text-align: center;
 }
 
 .wrapper .input-box {
   position: relative;
   width: 100%;
-  height: 50px;
-  margin: 30px 0;
+  height: 3.125rem; /* Height in rem */
+  margin: 1.875rem 0; /* Margin in rem */
 }
 
 .input-box input {
   width: 100%;
   height: 100%;
   background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.5rem; /* Border-radius in rem */
+  font-size: 1rem; /* Font size in rem */
   color: #fff;
-  padding: 20px 45px 20px 20px;
+  padding: 0.625rem 2.8125rem 0.625rem 0.625rem; /* Padding in rem */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .input-box input::placeholder {
@@ -47,22 +50,22 @@ body {
 
 .input-box .icon {
   position: absolute;
-  right: 20px;
+  right: 1.25rem; /* Right in rem */
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 1rem; /* Font size in rem */
 }
 
 .wrapper .remember-forgot {
   display: flex;
   justify-content: space-between;
-  font-size: 14.5px;
-  margin: -15px 0 15px;
+  font-size: 0.875rem; /* Font size in rem */
+  margin: 0; /* Reset margin for better spacing */
 }
 
 .remember-forgot label input {
   accent-color: #fff;
-  margin-right: 4px;
+  margin-right: 0.25rem; /* Margin in rem */
 }
 
 .remember-forgot a {
@@ -76,22 +79,22 @@ body {
 
 .wrapper button {
   width: 100%;
-  height: 45px;
+  height: 2.8125rem; /* Height in rem */
   background: #fff;
   border: none;
   outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  border-radius: 2.5rem; /* Border-radius in rem */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem; /* Font size in rem */
   color: #333;
   font-weight: 700;
 }
 
 .wrapper .register-link {
-  font: 14px;
+  font-size: 0.875rem; /* Font size in rem */
   text-align: center;
-  margin: 20px 0 15px;
+  margin: 1.25rem 0 0.9375rem; /* Margin in rem */
 }
 
 .register-link p a {
@@ -105,9 +108,9 @@ body {
 }
 
 .error {
-  color: #f4f416; /* red color for error messages */
-  font-size: 12px;
-  margin-top: 5px;
+  color: #f4f416; /* Error color */
+  font-size: 0.75rem; /* Font size in rem */
+  margin-top: 0.3125rem; /* Margin in rem */
 }
 
 /* Spinner styles */
@@ -115,10 +118,10 @@ body {
   border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey border */
   border-left: 4px solid #3498db; /* Blue color */
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem; /* Width in rem */
+  height: 2.5rem; /* Height in rem */
   animation: spin 1s linear infinite;
-  margin: 20px auto; /* Center the spinner horizontally */
+  margin: 1.25rem auto; /* Center the spinner horizontally */
 }
 
 @keyframes spin {
@@ -127,16 +130,64 @@ body {
 }
 
 /* Media Queries for responsiveness */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .wrapper {
-      min-width: 300px;
-      padding: 20px 30px;
+      width: 95%;
+      padding: 1.5rem;
+  }
+
+  .wrapper h1 {
+    font-size: 1.75rem; /* Font size in rem */
+  }
+
+  .input-box {
+    height: 2.5rem; /* Adjust height */
+    margin: 1.25rem 0; /* Adjust margin */
+  }
+
+  .input-box input {
+    font-size: 0.875rem; /* Font size in rem */
+  }
+
+  .wrapper button {
+    height: 2.5rem; /* Adjust height */
+    font-size: 0.875rem; /* Font size in rem */
+  }
+
+  .register-link {
+    font-size: 0.75rem; /* Font size in rem */
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
   .wrapper {
-      min-width: 250px;
-      padding: 15px 20px;
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .wrapper h1 {
+    font-size: 1.5rem; /* Font size in rem */
+  }
+
+  .input-box {
+    height: 2rem; /* Adjust height */
+    margin: 1rem 0; /* Adjust margin */
+  }
+
+  .input-box input {
+    font-size: 0.75rem; /* Font size in rem */
+  }
+
+  .wrapper button {
+    height: 2rem; /* Adjust height */
+    font-size: 0.75rem; /* Font size in rem */
+  }
+
+  .register-link {
+    font-size: 0.65rem; /* Font size in rem */
+  }
+
+  .error {
+    font-size: 0.65rem; /* Font size in rem */
   }
 }
